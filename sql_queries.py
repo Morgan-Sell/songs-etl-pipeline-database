@@ -8,14 +8,14 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 # CREATE TABLES
 
-songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id INT PRIMARY KEY, start_time TIME NOT NULL, user_id INT, level VARCHAR, song_id INT, artist_id INT,
+songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays (songplay_id INT PRIMARY KEY, start_time TIME NOT NULL, user_id INT, level VARCHAR, song_id VARCHAR, artist_id VARCHAR,
                             session_id INT, location VARCHAR, user_agent VARCHAR)""")
 
 user_table_create = ("""CREATE TABLE IF NOT EXISTS users (user_id INT PRIMARY KEY, title VARCHAR, artist_id INT, gender VARCHAR, level VARCHAR)""")
 
-song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (song_id INT PRIMARY KEY, title VARCHAR, artist_id INT, year INT, duration TIME)""")
+song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (song_id VARCHAR PRIMARY KEY, title VARCHAR, artist_id VARCHAR, year INT, duration NUMERIC)""")
 
-artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id INT PRIMARY KEY, name VARCHAR, location VARCHAR, latitude DECIMAL, longitude DECIMAL)""")
+artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists (artist_id VARCHAR PRIMARY KEY, name VARCHAR, location VARCHAR, latitude NUMERIC, longitude NUMERIC)""")
 
 time_table_create = ("""CREATE TABLE IF NOT EXISTS time (start_time TIME NOT NULL, hour INT, day INT, week INT, month INT, year INT, weekday INT)""")
 
