@@ -26,6 +26,16 @@ To quickly assess user behaviors, Sparkify required a Star-schematized database,
 -  Must run `create_tables.py` before running `test.ipynb`, `etl.ipynb`, and `etl.py`.
 -  The songs are filtered on "NextSong", a variable within the "action" attribute of the log data.
 
+# Example Queries
+
+Now that Sparkify has a schematized databaise, the startup can perform product market and user analysis.
+
+### Top 10 Markets 
+
+
+
+### Top 5 Most Frequent Users
+
 # Packages
 - Pandas
 - Psycopog2
