@@ -11,17 +11,26 @@ The company had two raw data sources comprised of JSON metadata. One source was 
 To examine users’ behaviors, Sparkify required a Star-schematized database which simplified queries and allows for fast aggregation. The database is in Third Normal Form (3NF) which removes duplicate data values and allows the Sparkify  to update the database by only revising one cell in one table.
 
 
-![sparkifydb schema]
+![sparkifydb schema](./images/sparkify_schema.png)
 
 
 
 # ETL Pipeline
 1)	Execute `create_tables.py` to create the `sparkifydb` database and tables shown in the schema displayed above.
 2)	Run `etl.py` which will execute the following actions:
-i)	Apply pandas to  process the JSON files, i.e. (listening) log and song dataset. 
-ii)	Use pscycog2 to connect to the sparkifydb database.
-iii)	Use the code from sql_queries.py to insert the raw data into its corresponding table. 
+    - Apply pandas to  process the JSON files, i.e. (listening) log and song dataset. 
+    - Use pscycog2 to connect to the sparkifydb database.
+    - Use the code from sql_queries.py to insert the raw data into its corresponding table. 
 3)	In test.ipynb, perform desired analysis using PostgreSQL.
 
+![etl pipeline](./images/etl_pipeline.png)
+
 ### Notes:
--	Must run `create_tables.py` before running `test.ipynb`, `etl.ipynb`, and `etl.py. 
+-  Must run `create_tables.py` before running `test.ipynb`, `etl.ipynb`, and `etl.py. 
+-  The songs are filtered on "NextSong", a variable within the "action" attribute of the log data.
+
+
+# Packages
+- Pandas
+- Psycopog2
+
