@@ -1,7 +1,7 @@
 # Sparkify Music Streaming App
-## Analyzing User's Listening Habits
+### Database and ETL Pipeline to Enable Product and User Analytics
 
-![music]<img src="https://github.com/Morgan-Sell/songs-etl-pipeline-database/blob/main/images/music_fest.jpg" width="800" weight="300">
+<img src="https://github.com/Morgan-Sell/songs-etl-pipeline-database/blob/main/images/music_fest.jpg" width="800" weight="200">
 
 # Objective
 Sparkify, a **fake** streaming music app that was launched during the COVID-19 pandemic, required help to enables its data analysts to evaluate trends and user habits. 
