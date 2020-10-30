@@ -6,6 +6,10 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    '''
+    - Loads and processes songs data.
+    - Inserts processed data into PostgreSQL database.
+    '''
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -19,6 +23,11 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    '''
+    - Loads and processes log (i.e. played songs) data.
+    - Inserts processed data into PostgreSQL database.
+    - Retrieves missing data - i.e. song_id and artist_id - from "artists" and "songs" tables.
+    '''
     # open log file
     df = pd.read_json(filepath, lines=True)
 
@@ -63,13 +72,18 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    '''
+    Retrieves JSON metadata.
+    Processes the metadata based on the selected function in the "func" variable.
+    '''
     # get all files matching extension from directory
     all_files = []
     # os.walk() generate the file names in a directory tree by walking the tree either top-down or bottom-up. 
     for root, dirs, files in os.walk(filepath):
         
         # Glob is a general term used to define techniques to match specified patterns according to rules related to Unix shell
-        # In Python, the glob module is used to retrieve files/pathnames matching a specified pattern. The pattern rules of glob follow standard Unix path expansion rules. 
+        # In Python, the glob module is used to retrieve files/pathnames matching a specified pattern. The pattern rules of glob follow standard Unix path 
+        # expansion rules. 
         files = glob.glob(os.path.join(root,'*.json'))
         for f in files :
             all_files.append(os.path.abspath(f))
