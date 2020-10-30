@@ -1,7 +1,7 @@
 # Sparkify Music Streaming App
 ## Analyzing User's Listening Habits
 
-![music](./images/music_fest.jpg =800x300)
+![music](./images/music_fest.jpg=800x300)
 
 # Objective
 Sparkify, a **fake** streaming music app that was launched during the COVID-19 pandemic, required help to enables its data analysts to evaluate trends and user habits. 
