@@ -1,7 +1,7 @@
 # Sparkify Music Streaming App
 ## Analyzing User's Listening Habits
 
-![music](./images/music_fest.jpg)
+![music](./images/music_fest.jpg =800x300)
 
 # Objective
 Sparkify, a **fake** streaming music app that was launched during the COVID-19 pandemic, required help to enables its data analysts to evaluate trends and user habits. 
@@ -28,13 +28,13 @@ To quickly assess user behaviors, Sparkify required a Star-schematized database,
 
 # Example Queries
 
-Now that Sparkify has a schematized databaise, the startup can perform product market and user analysis.
+Now that Sparkify has a schematized database, the startup can perform product/market and user analysis. The following are two examples:
 
-### Top 10 Markets 
+#### Top 10 Markets 
+![top 10 markets](./images/top10_markets.png)
 
-
-
-### Top 5 Most Frequent Users
+#### Top 5 Most Frequent Users
+![top 5 Markets](./images/top5_users.png)
 
 # Packages
 - Pandas
