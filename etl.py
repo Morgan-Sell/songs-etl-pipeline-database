@@ -18,7 +18,8 @@ def process_song_file(cur, filepath):
     cur.execute(song_table_insert, song_data)
     
     # insert artist record
-    artist_data = df[['artist_id', 'artist_name', 'artist_location', 'artist_latitude', 'artist_longitude']].values.tolist()[0]
+    artist_data = df[['artist_id', 'artist_name', 'artist_location', 'artist_latitude',
+                      'artist_longitude']].values.tolist()[0]
     cur.execute(artist_table_insert, artist_data)
 
 
@@ -67,14 +68,15 @@ def process_log_file(cur, filepath):
             songid, artistid = None, None
 
         # insert songplay record
-        songplay_data = (row.sessionId, row.ts, row.userId, row.level, songid, artistid, row.sessionId, row.location, row.userAgent)
+        songplay_data = (row.sessionId, row.ts, row.userId, row.level, songid, 
+                         artistid, row.sessionId, row.location, row.userAgent)
         cur.execute(songplay_table_insert, songplay_data)
 
 
 def process_data(cur, conn, filepath, func):
     '''
-    Retrieves JSON metadata.
-    Processes the metadata based on the selected function in the "func" variable.
+    - Retrieves JSON metadata.
+    - Processes the metadata based on the selected function in the "func" variable.
     '''
     # get all files matching extension from directory
     all_files = []
@@ -82,8 +84,8 @@ def process_data(cur, conn, filepath, func):
     for root, dirs, files in os.walk(filepath):
         
         # Glob is a general term used to define techniques to match specified patterns according to rules related to Unix shell
-        # In Python, the glob module is used to retrieve files/pathnames matching a specified pattern. The pattern rules of glob follow standard Unix path 
-        # expansion rules. 
+        # In Python, the glob module is used to retrieve files/pathnames matching a specified pattern. 
+        # The pattern rules of glob follow standard Unix path expansion rules. 
         files = glob.glob(os.path.join(root,'*.json'))
         for f in files :
             all_files.append(os.path.abspath(f))
